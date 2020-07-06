@@ -1,7 +1,7 @@
 module.exports = app => {
     const Stat = app.mongoose.model('Stat', {
         users: Number,
-        catgories: Number,
+        categories: Number,
         articles: Number,
         createdAt: Date
     })

@@ -5,7 +5,6 @@ module.exports = app => {
         const usersCount = await app.db('users').count('id').first() 
         const categoriesCount = await app.db('categories').count('id').first() 
         const articlesCount = await app.db('articles').count('id').first() 
-
         const { Stat } = app.api.stat
 
         const lastStat = await Stat.findOne({}, {}, {
@@ -14,8 +13,8 @@ module.exports = app => {
 
         const stat = new Stat({
             users: usersCount.count,
-            categories: categoriesCount.count,
             articles: articlesCount.count,
+            categories: categoriesCount.count,
             createdAt: new Date()
         })
 
